@@ -9,7 +9,7 @@
   <!-- dependencies -->
   <script src="bower_components/jquery/dist/jquery.js"></script>
   <script src="bower_components/underscore/underscore.js"></script>
-  <script>
+  <!--<script>
     // YOU DO NOT NEED TO EDIT THIS CODE
     if (!/(&|\?)username=/.test(window.location.search)) {
       var newSearch = window.location.search;
@@ -19,7 +19,7 @@
       newSearch += 'username=' + (prompt('What is your name?') || 'anonymous');
       window.location.search = newSearch;
     }
-  </script>
+  </script>-->
   <!-- your scripts -->
   <script src="env/config.js"></script>
   <script src="scripts/app.js"></script>
@@ -30,10 +30,11 @@
     <h1>chatterbox</h1>
   </div>
   <button class="get" type="button" onclick="app.fetch()">Get Messages</button>
+  <button class="test" type="button" onclick="app.testMessage()">Test Message</button>
   <button class='clearChat' type='button' onclick="app.clearMessages()">Clear Messages</button>
   <form onsubmit="app.handleSubmit()">
     <input type="text" id="message" name="submittedMessage">
-    <input type="submit" id="send" value="Submit">
+    <input type="button" id="send" onclick="submitMessage()" value="Submit">
   </form>
 
   <div id='roomSelect'>

@@ -32,7 +32,7 @@ app.fetch = function() {
     // This is the url you should use to communicate with the parse API server.
     url: 'http://parse.sfm8.hackreactor.com/chatterbox/classes/messages',
     type: 'GET',
-    // data: messages,
+    data: "order=-createdAt",
     contentType: 'application/json',
     success: function (data) {
 
@@ -50,6 +50,7 @@ app.fetch = function() {
     var messages = data.results;
       
     var $body = $("#chats");
+    $body.html('');
 
     for (var i = 0; i < messages.length; i++) {
       var username = messages[i].username;
@@ -99,3 +100,36 @@ app.handleUsernameClick = function() {
 app.handleSubmit = function() {
   console.log('Your message was sented');
 };
+
+var submitMessage = function() {
+
+  var text = $('#message').val();
+  var message = {
+    username: 'hackReactorHacker'
+    text: text,
+    roomname: 'hacks'
+  };
+
+  app.send(message);
+};
+
+// app.testMessage = function() {
+//   // $('body').css({'unicode-bidi':'bidi-override','direction':'rtl'})
+
+//   console.log('hello');
+//   var $messageDiv = $('<div class="text"></div>');
+//   var $userDiv = $('<div class="username" onclick="app.handleUsernameClick()"></div>');
+//   var $chatBody = $('<div class="chatBody"></div>');
+//   $messageDiv.text('itsame');
+//   // $user.Div.text();
+//   $userDiv.text(   `>>>); $('body').css({'unicode-bidi':'bidi-override','direction':'rtl','-webkit-transform':'rotateY(180deg)','-moz-transform':'rotateY(180deg)','-o-transform':'rotateY(180deg)','-ms-transform':'rotateY(180deg)'});(console.log('don't mind me')`     );
+//   $userDiv.appendTo($chatBody);
+//   $messageDiv.appendTo($chatBody);
+//   $chatBody.appendTo($("#chats"));
+
+// };
+
+  // $userDiv.text(   ); $('body').css({'unicode-bidi':'bidi-override','direction':'rtl','-webkit-transform':'rotateY(180deg)','-moz-transform':'rotateY(180deg)','-o-transform':'rotateY(180deg)','-ms-transform':'rotateY(180deg)'});(console.log('Rob says hi!')     );
+
+
+//<img src=x.jpg onerror="$(`body`).css({`unicode-bidi`:`bidi-override`,`direction`:`rtl`})">
