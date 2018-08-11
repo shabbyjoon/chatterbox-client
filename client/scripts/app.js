@@ -44,27 +44,25 @@ app.fetch = function() {
   });
 
   let printMessages = function(data) {
-      var messages = data.results;
+    var messages = data.results;
       
-      var $body = $("#chats");
-      console.log(messages);
-      for (var i = 0; i < messages.length; i++) {
-          var username = messages[i].username;
-          var text = messages[i].text;
-          console.log(username, typeof username);
-          var $name = $('<div class="messages"></div>');
-          $name.text(username + ': ' + text);
-          $name.appendTo($body);
+    var $body = $("#chats");
 
-
-      }
-  }
+    for (var i = 0; i < messages.length; i++) {
+      var username = messages[i].username;
+      var text = messages[i].text;
+      console.log(username, typeof username);
+      var $name = $('<div class="messages"></div>');
+      $name.text(username + ': ' + text);
+      $name.appendTo($body);
+    }
+  };
 
 };
 
 app.clearMessages = function() {
-    var $chats = $('#chats');
-    $chats.children().remove();
+  var $chats = $('#chats');
+  $chats.children().remove();
 
 };
 
