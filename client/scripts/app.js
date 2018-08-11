@@ -105,7 +105,7 @@ var submitMessage = function() {
 
   var text = $('#message').val();
   var message = {
-    username: 'hackReactorHacker'
+    username: 'hackReactorHacker',
     text: text,
     roomname: 'hacks'
   };
