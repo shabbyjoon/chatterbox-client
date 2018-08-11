@@ -2,7 +2,7 @@ body {
     background: #eee;
     text-align: center;
     padding: 0 25px;
-    font-family: arial, sans-serif;
+    font-family: "Trebuchet MS";
 }
 
 #main, #chats {
@@ -88,3 +88,26 @@ form input[type=text] {
     background-color: #0090da;
 }
 
+button {
+    font-family: "Trebuchet MS";
+    font-size: 20px;
+}
+
+#chats {
+
+}
+
+.chatBody {
+    margin: 8px;
+    background-color: #BFE5FB
+    border 1px;
+    border-radius: 10px;
+}
+
+.text {
+
+}
+
+.username {
+
+}
