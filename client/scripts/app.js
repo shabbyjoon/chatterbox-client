@@ -4,7 +4,10 @@ let app = {
   server: 'http://parse.sfm8.hackreactor.com/chatterbox/classes/messages'
 };
 
-app.init = function () {};
+app.init = function () {
+  app.handleSubmit();
+  app.fetch();
+};
 
 app.send = function (message) {
   $.ajax({
@@ -51,10 +54,14 @@ app.fetch = function() {
     for (var i = 0; i < messages.length; i++) {
       var username = messages[i].username;
       var text = messages[i].text;
-      console.log(username, typeof username);
-      var $name = $('<div class="messages"></div>');
-      $name.text(username + ': ' + text);
-      $name.appendTo($body);
+      var $messageDiv = $('<div class="text"></div>');
+      var $userDiv = $('<div class="username" onclick="app.handleUsernameClick()"></div>');
+      var $chatBody = $('<div class="chatBody"></div>');
+      $messageDiv.text(text);
+      $userDiv.text(username);
+      $userDiv.appendTo($chatBody);
+      $messageDiv.appendTo($chatBody);
+      $chatBody.appendTo($("#chats"));
     }
   };
 
@@ -66,6 +73,29 @@ app.clearMessages = function() {
 
 };
 
-app.renderMessage = function() {
+app.renderMessage = function(message) {
+  var text = message.text;
+  var username = message.username;
+  var $messageDiv = $('<div class="text"></div>');
+  var $userDiv = $('<div class="username" onclick="app.handleUsernameClick()"></div>');
+  var $chatBody = $('<div class="chatBody"></div>');
+  $messageDiv.text(text);
+  $userDiv.text(username);
+  $userDiv.appendTo($chatBody);
+  $messageDiv.appendTo($chatBody);
+  $chatBody.appendTo($("#chats"));
 
+};
+
+app.renderRoom = function(roomName) {
+  var $newRoom = $(`<div id="${roomName}"></div>`);
+  $newRoom.appendTo($('#roomSelect'));
+
+};
+app.handleUsernameClick = function() {
+  console.log('Added this person as a friend!');
+};
+
+app.handleSubmit = function() {
+  console.log('Your message was sented');
 };
