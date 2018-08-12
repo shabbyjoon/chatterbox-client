@@ -29,15 +29,29 @@
   <div id="main">
     <h1>chatterbox</h1>
   </div>
-  <button class="get" type="button" onclick="app.fetch()">Get Messages</button>
-  <button class="test" type="button" onclick="app.testMessage()">Test Message</button>
-  <button class='clearChat' type='button' onclick="app.clearMessages()">Clear Messages</button>
-  <form onsubmit="app.handleSubmit()">
-    <input type="text" id="message" name="submittedMessage">
-    <input type="button" id="send" onclick="submitMessage()" value="Submit">
-  </form>
+  <div id="buttonContainer">
+    <button class="get" type="button" onclick="app.printMessages(fetchedData)">Home</button>
+    <button class="test" type="button" onclick="app.testMessage()">Test Message</button>
+    <button class='clearChat' type='button' onclick="app.clearMessages()">Clear Messages</button>
+    <button class='showRoom' type='button' onclick="$('#roomCreation').show(100)">Create a New Room</button>
+    <div id="roomCreation">
+      <textarea id="enterRoomName" placeholder="Enter room name"></textarea>
+      <button class='createRoom' type='button' onclick="app.roomCreator()">Create</button> 
+    </div>
+    <form onsubmit="app.handleSubmit()">
+      <input type="text" id="name" name="userName" placeholder="Enter username">
+      <input type="text" id="message" name="submittedMessage" placeholder="Enter message">
+      <input type="button" id="send" onclick="submitMessage()" value="Submit">
+    </form>
+  </div>
+  <div>
+    <select id="roomSelector">
+      <option value="room">Select Room</option>
 
-  <div id='roomSelect'>
+  </select>
+  <button class="rooms" type="button" onclick="app.roomSelect()">select room</button>
+  </div>
+  <div id='roomList'>
 
   </div>
   <div class="chats" id="chats"></div>
