@@ -3,6 +3,7 @@ body {
     text-align: center;
     padding: 0 25px;
     font-family: "Trebuchet MS";
+    background-image: https://i.pinimg.com/736x/81/12/4c/81124c4f4b44572214e7d1ef415c7da2.jpg;
 }
 
 #main, #chats {
@@ -92,25 +93,115 @@ form input[type=text] {
     background-color: #0090da;
 }
 
+
 button {
-    font-family: "Trebuchet MS";
-    font-size: 20px;
+    -moz-box-shadow: 0px 1px 0px 0px #f0f7fa;
+    -webkit-box-shadow: 0px 1px 0px 0px #f0f7fa;
+    box-shadow: 0px 1px 0px 0px #f0f7fa;
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #99e6ff), color-stop(1, #18a7db));
+    background:-moz-linear-gradient(top, #99e6ff 5%, #18a7db 100%);
+    background:-webkit-linear-gradient(top, #99e6ff 5%, #18a7db 100%);
+    background:-o-linear-gradient(top, #99e6ff 5%, #18a7db 100%);
+    background:-ms-linear-gradient(top, #99e6ff 5%, #18a7db 100%);
+    background:linear-gradient(to bottom, #99e6ff 5%, #18a7db 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#99e6ff', endColorstr='#18a7db',GradientType=0);
+    background-color:#99e6ff;
+    -moz-border-radius:6px;
+    -webkit-border-radius:6px;
+    border-radius:6px;
+    border:1px solid #057fd0;
+    display:inline-block;
+    cursor:pointer;
+    color:#ffffff;
+    font-family:Arial;
+    font-size:15px;
+    font-weight:bold;
+    padding:6px 24px;
+    text-decoration:none;
+    text-shadow:0px -1px 0px #5b6178;
+}
+button:hover {
+    background:-webkit-gradient(linear, left top, left bottom, color-stop(0.05, #18a7db), color-stop(1, #99e6ff));
+    background:-moz-linear-gradient(top, #18a7db 5%, #99e6ff 100%);
+    background:-webkit-linear-gradient(top, #18a7db 5%, #99e6ff 100%);
+    background:-o-linear-gradient(top, #18a7db 5%, #99e6ff 100%);
+    background:-ms-linear-gradient(top, #18a7db 5%, #99e6ff 100%);
+    background:linear-gradient(to bottom, #18a7db 5%, #99e6ff 100%);
+    filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#18a7db', endColorstr='#99e6ff',GradientType=0);
+    background-color:#18a7db;
+}
+button:active {
+    position:relative;
+    top:1px;
+}
+
+.chats {
+  display: table;
+  
 }
 
 #chats {
 
+    background-color: #DEF6F6;
+    height: 40%;
+    width: 60%;
+    border-radius: 20px;
+
 }
 
-.chatBody {
+h1 {
+    background-color: #B2F5F5;
+    border: 8px;
+    border-radius: 20px;
+    text-align: center;
+      overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(40, end),
+    blink-caret .75s 
+
+}
+
+
+
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
+}
+
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange; }
+}
+
+#chats.chats {
+    background-color: white;
     margin: 8px;
-    background-color: #BFE5FB
+    /*background-color: #87E8E8*/
     border 1px;
     border-radius: 10px;
 }
 
-.text {
+.chatBody {
 
 }
+
+#main { 
+    background-color: #FDB9DB;
+    border-radius: 20px;
+
+}
+
+#name {
+
+}
+
+#message
 
 .username {
 
